@@ -1,0 +1,69 @@
+RewriteEngine on
+ErrorDocument 404 /view/error/404.php
+ErrorDocument 500 /view/error/500.php
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R]
+
+# Rewrite Url
+RewriteRule ^index.html$ index.php [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^home.html$ index.php [L]
+RewriteRule ^register.html$ index.php?modun=account&act=register_v2 [L]
+RewriteRule ^signin.html$ index.php?modun=account&act=login_v2 [L]
+RewriteRule ^verify.html$ view/account/verify.php [L]
+RewriteRule ^signout.html$ view/account/out.php [L]
+RewriteRule ^login-fb.html$ view/account/fb-login.php [L]
+
+ # Rewrite Pages
+RewriteRule ^vongquaykimcuong/(.*)-([0-9]+).html$ index.php?modun=vongquaykimcuong&act=index&id=$2 [L]
+RewriteRule ^homthinhbian$ index.php?modun=game/homthinhbian&act=index [L]
+RewriteRule ^homthinhbian/page=([0-9]+)$ index.php?modun=game/homthinhbian&act=index&page=$1 [L]
+RewriteRule ^vanmaybingo$ index.php?modun=game/bingo&act=index [L]
+RewriteRule ^nickfreefire$ index.php?modun=freefire&act=index [L]
+RewriteRule ^nickfreefire/page=([0-9]+)$ index.php?modun=freefire&act=index&page=$1 [L]
+RewriteRule ^nickfreefire/nick-([0-9]+).html$ index.php?modun=freefire&act=xem_them&id=$1 [L]
+RewriteRule ^latthe$ index.php?modun=game/latthe&act=index [L]
+RewriteRule ^sieucap$ index.php?modun=game/sieucap&act=index [L]
+RewriteRule ^random-freefire/(.*)$ index.php?modun=random_freefire&act=index&cname=$1 [L]
+RewriteRule ^random-freefire/(.*)/page=([0-9]+)$ index.php?modun=random_freefire&act=index&cname=$1&page=$2 [L]
+RewriteRule ^vongquaycodesung.html$ index.php?modun=vongquaycodesung&act=index [L]
+
+
+#user profile rewrite
+RewriteRule ^user/thongtin$ index.php?modun=action&act=index&cmd=thong_tin [L]
+RewriteRule ^user/doimatkhau$ index.php?modun=action&act=index&cmd=doi_mat_khau [L]
+RewriteRule ^user/lichsugiaodich$ index.php?modun=action&act=index&cmd=lich_su_giao_dich [L]
+RewriteRule ^user/lichsugiaodich/page=([0-9]+)$ index.php?modun=action&act=index&cmd=lich_su_giao_dich&page=$1 [L]
+RewriteRule ^user/napthe$ index.php?modun=action&act=index&cmd=nap_the [L]
+RewriteRule ^user/lichsunapthe$ index.php?modun=action&act=index&cmd=lich_su_nap_the [L]
+RewriteRule ^user/lichsunapthe/page=([0-9]+)$ index.php?modun=action&act=index&cmd=lich_su_nap_the&page=$1 [L]
+RewriteRule ^user/rutkimcuong$ index.php?modun=action&act=index&cmd=rut_kim_cuong [L]
+RewriteRule ^user/lichsurutkimcuong$ index.php?modun=action&act=index&cmd=lich_su_rut_kim_cuong [L]
+RewriteRule ^user/lichsurutkimcuong/page=([0-9]+)$ index.php?modun=action&act=index&cmd=lich_su_rut_kim_cuong&page=$1 [L]
+RewriteRule ^user/accfreefire$ index.php?modun=action&act=index&cmd=acc_ff [L]
+RewriteRule ^user/accfreefire/page=([0-9]+)$ index.php?modun=action&act=index&cmd=acc_ff&page=$1 [L]
+RewriteRule ^user/random-freefire$ index.php?modun=action&act=index&cmd=random_ff [L]
+RewriteRule ^user/random-freefire/page=([0-9]+)$ index.php?modun=action&act=index&cmd=random_ff&page=$1 [L]
+
+
+
+ # Rewrite Module
+RewriteRule ^system/user$ model/account/user.php [L]
+RewriteRule ^system/napthe$ model/account/napthe.php [L]
+
+RewriteRule ^system/vongquaykimcuong$ model/vongquaykimcuong/xuly.php [L]
+RewriteRule ^system/vongquaycodesung$ model/vongquaycodesung/xuly.php [L]
+RewriteRule ^system/bingo$ model/game/bingo/xuly.php [L]
+RewriteRule ^system/latthe$ model/latthe/xuly.php [L]
+
+
+
+ # Rewrite ADMIN
+RewriteRule ^admin/homthinhbian$ admin/?modun=homthinhbian&act=index [L]
+RewriteRule ^admin/homthinhbian/page=([0-9]+)$ admin/?modun=homthinhbian&act=index&page=$1 [L]
+RewriteRule ^admin/bingo$ admin/?modun=bingo&act=index [L]
+RewriteRule ^admin/thenap$ admin/?modun=thenap&act=index [L]
+RewriteRule ^admin/thenap/page=([0-9]+)$ admin/?modun=thenap&act=index&page=$1 [L]
+RewriteRule ^admin/users$ admin/?modun=account&act=index [L]
+RewriteRule ^admin/users/page=([0-9]+)$ admin/?modun=account&act=index&page=$1 [L]

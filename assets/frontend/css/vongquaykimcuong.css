@@ -1,0 +1,42 @@
+.rotation {
+    text-align: center;
+}
+
+.rotation .play-spin {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
+.rotation .play-spin .ani-zoom {
+    position: absolute;
+    display: block;
+    width: 110px;
+    z-index: 5;
+    top: calc(50% - 79px);
+    left: calc(51% - 55px);
+}
+.ani-zoom {
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.btn-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 800px)
+.list-roll-inner {
+    width: 85%;
+    margin-top: 30px;
+    max-height: 400px;
+    overflow-y: scroll;
+    margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+        .btn-2 {
+            font-size: 12px;
+            padding: 1px 5px;
+        }
+
+        @media all and (max-width: 768px) {
+            .nthoa_table {
+                overflow-x: auto;
+            }
+        }
+
+
+        .next, .previous {
+            background-color: #ff5722 !important;
+            color: #fff !important;
+        }
+
+        .daterangepicker .table-condensed td {
+            padding: 3px;
+            border-bottom: 0px !important;
+        }
